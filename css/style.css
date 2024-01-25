@@ -74,7 +74,7 @@ a {
   text-decoration: none;
   text-align: right;
   margin-left: 50px;
-  color: rgb(184, 21, 29);
+  color: rgb(255, 8, 20);
 }
 a:hover {
   text-decoration: underline;
@@ -113,4 +113,31 @@ li {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+
+dialog::backdrop {
+  background-color: #292929;
+}
+
+dialog {
+  text-align: center;
+  margin: 300px 500px;
+  padding: 30px;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
+  width: 40%;
+}
+
+#button-dialog {
+  padding: 8px;
+  width: 100px;
+  background-color: #267beb;
+  color: white;
+}
+
+#h2-dialog {
+  color: #111;
+  padding: 8px;
+  font-size: 30px;
 }/*# sourceMappingURL=style.css.map */

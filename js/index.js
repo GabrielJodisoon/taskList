@@ -24,10 +24,11 @@ function renderList(){
         deleteLinkElement.setAttribute('onclick', 'deleteItem(' + index + ')');
 
 
+
         editLinkElement.setAttribute('class', "fa-solid fa-pen");
         editLinkElement.setAttribute('href', '#');
         editLinkElement.setAttribute('onclick', 'editItem(' + index + ')');
-        editLinkElement.setAttribute('style', 'color: #d9d9d9')
+        editLinkElement.setAttribute('style', 'color: #d9d9d9');
 
         liElement.setAttribute('id', 'editando(' + index + ')');
 
@@ -48,17 +49,25 @@ function renderList(){
 renderList();
 
 buttonElement.addEventListener('click', addItem)
+const modal = document.querySelector('dialog');
+const buttonClose = document.querySelector('dialog button')
+
 
 function addItem() {
-    var itemTexto = textElement.value;
 
-    if (itemTexto == '') {
-        alert('adicione uma tarefa')
+    var itemText = textElement.value;
+
+    if (itemText == '') {
+        modal.showModal();
+        buttonClose.onclick = () => {modal.close()}
+
+        // alert('adicione uma tarefa')
     } else {
-        list.push(itemTexto);
-
+        list.push(itemText);
         textElement.value = '';
     }
+
+
     renderList();
 
 }
@@ -66,11 +75,11 @@ function addItem() {
 function editItem(index){
     
 
-    var pegandoTarefa = document.getElementById('editando('+ index +')');
-    var tarefaEditada = prompt('tarefa nova: ');
+    var takeTask = document.getElementById('editando('+ index +')');
+    var editTask = prompt('Edite sua tarefa: ');
 
-    tarefaEditada = tarefaEditada.replace();
-    pegandoTarefa.firstChild.nodeValue = tarefaEditada;
+    editTask = editTask.replace();
+    takeTask.firstChild.nodeValue = editTask;
 
 }
 
